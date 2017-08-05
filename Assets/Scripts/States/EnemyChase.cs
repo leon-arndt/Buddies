@@ -69,9 +69,9 @@ public class EnemyChase : IFSMState<EnemyController> {
 			agent.SetDestination(e.playerTransform.position); //the player to target
 			chasingTime = 0;
 			Debug.Log("Setting Target...");
-			character.Move(Vector3.zero, false, false);
+			//character.Move(Vector3.zero, false, false);
 		} else {
-			character.Move(agent.desiredVelocity, false, false);
+			//character.Move(agent.desiredVelocity, false, false);
 		}
 
 		//run after the player!

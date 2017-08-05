@@ -51,10 +51,10 @@ public class EnemyPatrol : IFSMState<EnemyController> {
             //Debug.Log("Changed Waypoint to #"+currentWaypoint);
 			agent.SetDestination(e.waypoints[currentWaypoint]);
 			
-            character.Move(Vector3.zero, false, false);
+            //character.Move(Vector3.zero, false, false); //also throws error
 
 		} else {
-			character.Move(agent.desiredVelocity, false, false); //this throws error NRE
+			//character.Move(agent.desiredVelocity, false, false); //this throws error NRE
 		}
 
 

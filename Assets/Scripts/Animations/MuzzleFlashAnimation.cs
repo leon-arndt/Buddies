@@ -7,12 +7,12 @@ public class MuzzleFlashAnimation : MonoBehaviour {
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Debug.Log("Particles Spawned");
+            //Debug.Log("Particles Spawned");
             particles.Play();
         }
 
         if (Input.GetKeyUp(KeyCode.Space)) {
-            Debug.Log("Particles Killed");
+            //Debug.Log("Particles Killed");
             particles.Stop();
         }
     }

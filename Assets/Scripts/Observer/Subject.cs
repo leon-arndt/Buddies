@@ -24,6 +24,7 @@ namespace ObserverPattern {
 
         //Remove observer from the list
         public void RemoveObserver(Observer observer) {
+            observers.Remove(observer); //new
         }
     }
 }

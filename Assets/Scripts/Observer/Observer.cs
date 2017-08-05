@@ -7,18 +7,16 @@ namespace ObserverPattern {
         public abstract void OnNotify();
     }
 
-    public class Box : Observer {
-        //The box gameobject which will do something
-        GameObject boxObj;
-        //What will happen when this box gets an event
-        BoxEvents boxEvent;
+    public class Minion : Observer {
+        GameObject minionObj; //The box gameobject which will do something
+        BoxEvents minionEvent; //What will happen when this box gets an event
 
-        public Box(GameObject boxObj, BoxEvents boxEvent) {
-            this.boxObj = boxObj;
-            this.boxEvent = boxEvent;
+        public Minion(GameObject minionObj, BoxEvents minionEvent) {
+            this.minionObj = minionObj;
+            this.minionEvent = minionEvent;
         }
 
-        //What the box will do if the event fits it (will always fit but you will probably change that on your own)
+        //What the minion will do if the event fits it
         public override void OnNotify() {
             //Jump(boxEvent.GetJumpForce());
             StartChasing();
@@ -26,7 +24,8 @@ namespace ObserverPattern {
 
         //A function that makes the observers start chasing
         void StartChasing() {
-            boxObj.GetComponent<EnemyController>().StartChasing();
+            Debug.Log("The GameController told the Enemy Controller to start chasing");
+            minionObj.GetComponent<EnemyController>().StartChasing();
         }
 
 
@@ -35,8 +34,8 @@ namespace ObserverPattern {
         //The box will always jump in this case
         void Jump(float jumpForce) {
             //If the box is close to the ground
-            if (boxObj.transform.position.y < 0.55f) {
-                boxObj.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
+            if (minionObj.transform.position.y < 0.55f) {
+                minionObj.GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce);
             }
         }
     }

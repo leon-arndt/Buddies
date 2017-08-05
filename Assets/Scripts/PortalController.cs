@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using C;
 using UnityEngine.Networking; //new
 
 public class PortalController : MonoBehaviour {
@@ -9,9 +10,11 @@ public class PortalController : MonoBehaviour {
     public ScoreManager myScoreManager;
     public GameObject explosionPrefab;
     public GameObject enemyPrefab;
+    //public GameObject[] enemyPrefabs;
 
     // Use this for initialization
     void Start () {
+        myScoreManager = GameObject.FindGameObjectWithTag(Tags.SCOREMANAGER).GetComponent<ScoreManager>();
         InvokeRepeating("SpawnEnemy", 1.0f, respawnTime); //maybe turn this into variables
 	}
 	

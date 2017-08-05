@@ -8,25 +8,12 @@ public class PlayerController : NetworkBehaviour { //changed to NetworkBehavior 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public GameObject myCam;
-    //public Rigidbody rb;
         
     public override void OnStartLocalPlayer() {
         GetComponent<MeshRenderer>().material.color = Color.blue;
-        //Instantiate(myCam, new Vector3(-10.6f, 6.25f, 0), Quaternion.identity);
-        //myCam.GetComponent<CameraFollow>().SetTarget(gameObject.transform);
-        if (isLocalPlayer) {
-            //Camera.main.GetComponent<CameraFollow>().SetTarget(gameObject.transform);
-        }
-        //Debug.Log("Hi I'm a local player!"); //is never called
     }
 
-    /*private void Start() { //remove this if it causes problems, called by both players later by the client so follows client
-        Camera.main.GetComponent<CameraFollow>().SetTarget(gameObject.transform);
-        rb = GetComponent<Rigidbody>();
-    }*/
-
-
-    private void Start() { //called by both?
+    private void Start() {
         Debug.Log("Hi I'm a player");
 
         if (isLocalPlayer) {
@@ -56,17 +43,7 @@ public class PlayerController : NetworkBehaviour { //changed to NetworkBehavior 
                 //AudioSource audio = GetComponent<AudioSource>(); //play a player hurt sound
                 //audio.Play();
             }
-
-                /*life--;
-                rb.AddForce(transform.forward * -50.0f);
-                if (life <= 0) {
-                    Debug.Log("The Player has died");
-                    //Destroy(gameObject);
-
-                    RpcRespawn(); // called on the Server, but invoked on the Clients
-                }*/
-
-            }
+        }
     }
 
 

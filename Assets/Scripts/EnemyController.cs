@@ -7,7 +7,7 @@ using C;
 [RequireComponent(typeof(NavMeshAgent))]
 
 public class EnemyController : StatefulMonoBehaviour<EnemyController> {
-	public Transform playerTransform; //this gets the wrong values, gets the starting point of the unspawned player prefab
+	public Transform playerTransform; //gets the Host Player most of the time
 	public List<Vector3> waypoints = new List<Vector3>();
     public ScoreManager myScoreManager;
     public GameObject bloodPrefab;
@@ -59,7 +59,7 @@ public class EnemyController : StatefulMonoBehaviour<EnemyController> {
                 GameObject.Destroy(gameObject);  //Destroy(gameObject);
             }
 
-            flashRed(); 
+            //flashRed();
         }
     }
 
@@ -95,12 +95,13 @@ public class EnemyController : StatefulMonoBehaviour<EnemyController> {
         return closest;
     }
 
-    public void flashRed() { //clean
+    //removed because it was not working properly
+    /*public void flashRed() {
         GetComponent<Renderer>().material.color = Color.red;
         Invoke("returnToNormalColor", 0.5f);
     }
 
-    public void returnToNormalColor() { //clean
+    public void returnToNormalColor() { 
         GetComponent<Renderer>().material.color = Color.white;
-    }
+    }*/
 }
