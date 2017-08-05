@@ -23,7 +23,7 @@ public class ScoreManager : NetworkBehaviour {
 
     public void AddToScore(int summand) {
         score += summand;
-        Debug.Log("The Score is now" + score);
+        Debug.Log("The Score is now " + score);
         myTextScoreController.UpdateScoreUI(score);
     }
 

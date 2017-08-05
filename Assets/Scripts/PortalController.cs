@@ -9,6 +9,7 @@ public class PortalController : MonoBehaviour {
     public float respawnTime = 12.0f; //the time between enemy spawns (in seconds)
     public ScoreManager myScoreManager;
     public GameObject explosionPrefab;
+    public GameObject spawnPrefab;
     public GameObject enemyPrefab;
     //public GameObject[] enemyPrefabs;
 
@@ -20,12 +21,12 @@ public class PortalController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     public void SpawnEnemy() {
         //Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-
+        Instantiate(spawnPrefab, transform.position, Quaternion.identity);
         var enemy = (GameObject)Instantiate(
         enemyPrefab,
         gameObject.transform.position,
@@ -47,8 +48,9 @@ public class PortalController : MonoBehaviour {
                 myScoreManager.AddToScore(5);
                 AudioSource audio = GetComponent<AudioSource>(); //play an explosion sound
                 audio.Play();
-                GameObject.Destroy(gameObject);  //Destroy(gameObject);
-                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity); //create an explosion
+
+                GameObject.Destroy(gameObject);
             }
         }
     }

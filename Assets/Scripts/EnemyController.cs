@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 //using Systems.Collections;
-using System.Collections.Generic; //old before hand
+using System.Collections.Generic;
 using UnityEngine.AI;
 using C;
 
 [RequireComponent(typeof(NavMeshAgent))]
 
 public class EnemyController : StatefulMonoBehaviour<EnemyController> {
-	public Transform playerTransform; //gets the Host Player most of the time
+	public Transform playerTransform;
 	public List<Vector3> waypoints = new List<Vector3>();
     public ScoreManager myScoreManager;
     public GameObject bloodPrefab;
@@ -29,14 +29,14 @@ public class EnemyController : StatefulMonoBehaviour<EnemyController> {
 		}
 
 		fsm = new FSM<EnemyController>();
-        if (shouldPatrol) { //new
+        if (shouldPatrol) { //a bool toggle which enables automatic patrolling
             fsm.Configure(this, new EnemyPatrol());
         }
     }
 
-    private void Start() { //for finding players, if this works take out the findPlayers code in EnemyChase
+    private void Start() { 
         //playerTransform = GameObject.FindWithTag("PlayerObject").transform;
-        playerTransform = FindClosestPlayer(gameObject).transform;
+        playerTransform = FindClosestPlayer(gameObject).transform; //for finding the closest player transform
         myScoreManager = GameObject.FindGameObjectWithTag(Tags.SCOREMANAGER).GetComponent<ScoreManager>();
         //Debug.Log("Enemy believes the player is at " + playerTransform.position);
     }

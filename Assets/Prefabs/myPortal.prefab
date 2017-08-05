@@ -284,6 +284,8 @@ MonoBehaviour:
   myScoreManager: {fileID: 0}
   explosionPrefab: {fileID: 1067860274202240, guid: c43022408af225648af566b0a62aa2bc,
     type: 2}
+  spawnPrefab: {fileID: 1689203223203192, guid: a74663675153ca94ca81fd6b966dfec4,
+    type: 2}
   enemyPrefab: {fileID: 1000014000518406, guid: 584a6d168825f4a448c6af03209d50ee,
     type: 2}
 --- !u!198 &198265086387432332
