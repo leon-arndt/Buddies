@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class WinGame : MonoBehaviour {//reverted to MonoBehaviour
     public GameObject WinText;
+    public GameObject myCam;
     
     private void Start() {
         Debug.Log("The Exit exists");
@@ -15,6 +16,7 @@ public class WinGame : MonoBehaviour {//reverted to MonoBehaviour
     }
     public void OnCollisionEnter(Collision o) { //player reaches goal
         Debug.Log("A Player has Won");
+        myCam.GetComponent<CameraFollow>().camZoomsOut = true;
         //SceneManager.LoadScene("GameOver");
 
         if (o.gameObject.tag == "PlayerObject") {
