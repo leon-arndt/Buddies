@@ -5,6 +5,12 @@ using C; //needed for Tags
 using UnityEngine.UI;
 
 public class TextScoreController : MonoBehaviour {
+    /// <summary>
+    /// This is the visual side of the Score Manager.
+    /// It updates the UI element as the score increases.
+    /// 
+    /// </summary>
+    
     //public ScoreManager myScoreManager;
     Text myText;
 

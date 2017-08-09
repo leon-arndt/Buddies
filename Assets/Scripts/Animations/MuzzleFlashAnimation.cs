@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MuzzleFlashAnimation : MonoBehaviour {
+    /// <summary>
+    /// This is an unused script which was previously used to test muzzle flash animations for a gun
+    /// </summary>
+
     public ParticleSystem particles;
 
     private void Update() {

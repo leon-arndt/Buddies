@@ -4,6 +4,12 @@ using C;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 public class EnemyPatrol : IFSMState<EnemyController> {
+    /// <summary>
+    /// This state controls how the enemy acts when not chasing the player.
+    /// It is heavily based on the FSM state we created in class.
+    /// The enemies use waypoints to patrol the map.
+    /// </summary>
+ 
     private int currentWaypoint = 0;
     //private float closeEnoughToWaypoint = 0.5f;
     //private float speed = 8.0f;

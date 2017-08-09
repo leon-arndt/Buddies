@@ -5,6 +5,11 @@ using C;
 using UnityEngine.Networking; //new
 
 public class PortalController : MonoBehaviour {
+    /// <summary>
+    /// This is controller similar to the enemy controller and is used for the portal behavior
+    /// It contains a lot of simple unity code.
+    /// </summary>
+    /// 
     public int life = 8; //a considerable amount
     public float respawnTime = 12.0f; //the time between enemy spawns (in seconds)
     public ScoreManager myScoreManager;

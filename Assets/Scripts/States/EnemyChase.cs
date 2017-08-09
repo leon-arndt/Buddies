@@ -3,12 +3,20 @@ using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
 
 public class EnemyChase : IFSMState<EnemyController> {
-    private Transform aPlayerTransform;
+    /// <summary>
+    /// This is the Chasing state for the enemy.
+    /// It is triggered when the enemy is hit by a bullet.
+    /// Known Bug: Enemies chase the host player mst of the time, I am unsure what causes this
+    /// </summary>
+
+
+    private Transform aPlayerTransform; //unused field, was used for testing
+    private ThirdPersonCharacter character; //unused field, was used in previous iterations
+
     private float notSeePlayerTime = 0;
     private float maxNotSeePlayerTime = 5.0f;
     private float chasingTime = 0;
     private NavMeshAgent agent;
-    private ThirdPersonCharacter character;
 
     void Start() {
         //revert to this //aPlayerTransform = GameObject.FindWithTag("PlayerObject").transform; //gives us a player transform to work with

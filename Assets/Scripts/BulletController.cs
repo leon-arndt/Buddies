@@ -2,7 +2,13 @@
 using System.Collections;
 
 public class BulletController : MonoBehaviour {
-    void OnCollisionEnter(Collision collision) { //might need to be onTriggerEnter,
+    /// <summary>
+    /// This is the script which controls how the bullets behave.
+    /// They started out from the Unity multiplayer FPS tutorial found on the documentation.
+    /// The code here is very minimal because bullets don't need to do much.
+    /// </summary>
+
+    void OnCollisionEnter(Collision collision) {
         Debug.Log("bullet hits " + collision.transform.name);
         //check that hit is not the other player before continuing
         //...
@@ -14,7 +20,7 @@ public class BulletController : MonoBehaviour {
          }
          */
 
-        if (collision.gameObject.tag != "PlayerObject") {
+        if (collision.gameObject.tag != "PlayerObject") { //does not hurt players
             Destroy(gameObject);
         }
     }

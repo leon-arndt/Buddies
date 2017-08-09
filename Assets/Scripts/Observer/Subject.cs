@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace ObserverPattern {
+    
     //Invokes the notificaton method
     public class Subject {
         //A list with observers that are waiting for something to happen
@@ -24,7 +25,7 @@ namespace ObserverPattern {
 
         //Remove observer from the list
         public void RemoveObserver(Observer observer) {
-            observers.Remove(observer); //new
+            observers.Remove(observer); //gives the subjects the ability to "unsubscribe"
         }
     }
 }

@@ -4,7 +4,19 @@ using UnityEngine.Networking;
 
 
 public class PlayerController : NetworkBehaviour { //changed to NetworkBehavior from MonoBehavior
-    //public float moveSpeed = 10f;
+    /// <summary>
+    /// Welcome to Player Controller City.
+    /// If you look to your left you'll see shooting and on your right you'll find respawning and health.
+    /// This script does deceivingly little. A lot of the work is done by Unity and he High-Level Networking API.
+    /// I initially encountered a lot of problems with local vs client in terms of camera and movement
+    /// but these were eventually ironed out.
+    /// 
+    /// Note: The bullets shoot from a Cylinder (a child of the mesh) located on the player's chest.
+    /// I played around a lot with using different models for the characters, such as the voxel characters
+    /// but ended up liking the contrast of realistic and cartoony enough that I never replaced Ethan.
+    /// </summary>
+    
+    //public float moveSpeed = 10f; //unused
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public GameObject myCam;

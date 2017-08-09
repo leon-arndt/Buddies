@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WinGame : MonoBehaviour {//reverted to MonoBehaviour
+    /// <summary>
+    /// This script is attached to a cube which efefctively marks the end of the level
+    /// It tells the camera when it should start to pan out.
+    /// It also puts text on the UI canvas to inform the players that the game has ended.
+    /// </summary>
+    
     public GameObject WinText;
     public GameObject myCam;
     

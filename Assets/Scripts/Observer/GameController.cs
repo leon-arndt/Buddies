@@ -3,6 +3,13 @@ using System.Collections;
 
 namespace ObserverPattern {
     public class GameController : MonoBehaviour {
+        /// <summary>
+        /// This GameController is the heart of the observer pattern I implemented.
+        /// The observer pattern is used to inform a set of minions when their boss is attacked.
+        /// It is based on a tutorial by Erik Nordeus at http://www.habrador.com/
+        /// In the pattern the four minions are observers which are subscribed (observe) the subject, our boss
+        /// </summary>
+
         public GameObject bossObj;
 
         //The boxes that will jump

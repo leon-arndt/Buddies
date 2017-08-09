@@ -7,6 +7,11 @@ using C;
 [RequireComponent(typeof(NavMeshAgent))]
 
 public class EnemyController : StatefulMonoBehaviour<EnemyController> {
+    /// <summary>
+    /// This powerhouse of a script controls enemy behavior.
+    /// It contains fields such as hp and is connected to the FSM and the Score Manager
+    /// Some old approahes are commented out but remain here as reference.
+    /// </summary>
 	public Transform playerTransform;
 	public List<Vector3> waypoints = new List<Vector3>();
     public ScoreManager myScoreManager;
